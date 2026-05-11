@@ -4,7 +4,7 @@ const { frontmatter } = Astro.props;
 
 <meta charset="utf-8" />
 <h1>{frontmatter.title}</h1>
-<p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+<p>{frontmatter.date.toString().slice(0, 10)}</p>
 <p><em>{frontmatter.description}</em></p>
 <p>Written by: {frontmatter.author}</p>
 <img
