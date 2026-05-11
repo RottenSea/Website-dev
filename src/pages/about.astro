@@ -1,19 +1,14 @@
 ---
-import Menu from "../components/Menu.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
 const pageTitle = "Home Page";
 ---
 
 <body>
-  <Menu />
-  <Header />
-
-  <h1>About Me</h1>
-
-  <Footer />
+  <BaseLayout>
+    <h1>About Me</h1>
+  </BaseLayout>
   <script>
     const menu = document.querySelector(".menu");
 

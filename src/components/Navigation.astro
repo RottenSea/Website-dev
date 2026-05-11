@@ -1,12 +1,28 @@
 ---
-
+const navLinks = [
+  { href: "/", label: "首页" },
+  { href: "/about", label: "关于我" },
+  { href: "/blog", label: "博客" },
+];
 ---
 
-<div
-  id="main-menu"
-  class="nav-links"
->
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-</div>
+<style>
+  @import "../styles/Navigation.css";
+</style>
+
+<nav class="main-navigation">
+  <ul class="nav-list">
+    {
+      navLinks.map((link) => (
+        <li class="nav-item">
+          <a
+            href={link.href}
+            class={Astro.url.pathname === link.href ? "active" : ""}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
