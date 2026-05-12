@@ -8,13 +8,13 @@ const blog = defineCollection({
   schema: z.object({
     draft: z.boolean().default(true),
 
-    slug: z.string().nullable(),
+    slug: z.string().nullable().optional(),
     title: z.string(),
     author: z.string().nullable().default("RottenSea"),
     description: z.string(),
 
     date: z.date(),
-    update: z.date().nullable(),
+    update: z.date().nullable().optional(),
 
     image: z.object({
       url: z.string().nullable(),
@@ -22,6 +22,8 @@ const blog = defineCollection({
     }),
 
     category: z.string().nullable().default("blog"),
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.string()).default(["blog"]),
   }),
 });
+
+export const collections = { blog };

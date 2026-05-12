@@ -31,3 +31,5 @@ docs/
 .vscode/*
 !.vscode/extensions.json
 !.vscode/launch.json
+
+AGENTS.md

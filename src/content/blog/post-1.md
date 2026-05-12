@@ -1,6 +1,7 @@
 ---
 draft: false
 
+slug: ""
 title: "My First Blog Post"
 author: "Astro Learner"
 description: "This is the first post of my new Astro blog."
