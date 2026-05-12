@@ -1,12 +1,16 @@
 ---
+draft: false
+
 title: "My First Blog Post"
+author: "Astro Learner"
 description: "This is the first post of my new Astro blog."
+
 date: 2022-07-01
 update: 2026-05-11
-author: "Astro Learner"
+
 image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
+  url: ""
+  alt: ""
 tags: ["astro", "blogging", "learning in public"]
 ---
 

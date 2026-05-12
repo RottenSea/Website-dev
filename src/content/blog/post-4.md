@@ -1,4 +1,5 @@
 ---
+slug: ""
 title: My Fourth Blog Post
 date: 2022-08-08
 layout: ../../layouts/MarkdownPostLayout.astro
