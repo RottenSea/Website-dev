@@ -1,10 +1,17 @@
-.main-navigation {
-  background-color: #333;
-  padding: 1rem;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
+.main-navigation {
+  background-color: transparent; /* 让背景图完全透出 */
+  padding: 1rem;
+}
 .nav-list {
-  list-style: none;
+  list-style-type: none;
   display: flex;
   gap: 2rem;
   margin: 0;
@@ -21,16 +28,33 @@
 }
 
 .nav-item a:hover {
-  background-color: #555;
+  color: lightblue;
 }
 
-.nav-item a.active {
-  background-color: #007bff;
-}
-
-div.banner {
+/* banner */
+.banner {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+.main-navigation {
+  background-color: transparent;
+  padding: 1rem;
+}
+
+.banner-mask {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
 }

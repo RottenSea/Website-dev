@@ -1,51 +1,39 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { Image } from "astro:assets";
+import Banner from "@/components/Banner.astro";
+import Footer from "@/components/Footer.astro";
 
-import "../styles/global.css";
+import "@/styles/global.css";
 
-const pageTitle = "Home Page";
-
-import bgImage from "@/assets/background/123189609_p0.jpg";
+const pageTitle = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
-    />
     <meta
       name="viewport"
       content="width=device-width"
     />
-    <meta
+    <title>{pageTitle}</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    /><meta
+      name="viewport"
+      content="width=device-width"
+    /><meta
       name="generator"
       content={Astro.generator}
     />
-    <title>{pageTitle}</title>
-    <style>
-      html {
-        background-image: url("${bgImage}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: scroll;
-      }
-    </style>
   </head>
 
   <body>
-    <Header />
-
+    <Banner />
     <main class="container">
       <h1>{pageTitle}</h1>
       <slot />
     </main>
-
     <Footer />
   </body>
 </html>
