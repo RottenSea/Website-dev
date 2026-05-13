@@ -1,14 +1,18 @@
 ---
-slug: ""
-title: My Third Blog Post
-author: Astro Learner
-description: "I had some challenges, but asking in the community really helped!"
-image:
-  url: "https://docs.astro.build/assets/rays.webp"
-  alt: "The Astro logo on a dark background with rainbow rays."
-date: 2022-07-15
-update:
-tags: ["astro", "learning in public", "setbacks", "community"]
----
+draft: true
 
-It wasn't always smooth sailing, but I'm enjoying building with Astro. And, the [Discord community](https://astro.build/chat) is really friendly and helpful!
+slug: ""
+title: ""
+author: ""
+description: ""
+
+date: 2026-05-12
+update:
+
+image:
+  url: ""
+  alt: ""
+
+category: ""
+tags: []
+---

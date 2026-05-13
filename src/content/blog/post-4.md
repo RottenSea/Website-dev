@@ -1,15 +1,18 @@
 ---
-slug: ""
-title: My Fourth Blog Post
-date: 2022-08-08
-update:
-layout: ../../layouts/MarkdownPostLayout.astro
-author: Astro Learner
-description: "This post will show up on its own!"
-image:
-  url: "https://docs.astro.build/default-og-image.png"
-  alt: "The word astro against an illustration of planets and stars."
-tags: ["astro", "successes"]
----
+draft: true
 
-This post should show up with my other blog posts, because `import.meta.glob()` is returning a list of all my posts in order to create my list.
+slug: ""
+title: ""
+author: ""
+description: ""
+
+date: 2026-05-12
+update:
+
+image:
+  url: ""
+  alt: ""
+
+category: ""
+tags: []
+---

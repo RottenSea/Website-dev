@@ -3,7 +3,7 @@ draft: true
 
 slug: ""
 title: ""
-author: ""
+author: "RottenSea"
 description: ""
 
 date:
@@ -14,5 +14,5 @@ image:
   alt: ""
 
 category: ""
-tags: ["blog"]
+tags: []
 ---

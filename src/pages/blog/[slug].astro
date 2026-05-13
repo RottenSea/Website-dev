@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import Layout from "@/layouts/Layout.astro";
 
 import { getCollection, render } from "astro:content";
 
@@ -15,8 +15,8 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<BaseLayout>
+<Layout>
   <h1>{post.data.title}</h1>
   <time>{post.data.date.toDateString()}</time>
   <Content />
-</BaseLayout>
+</Layout>

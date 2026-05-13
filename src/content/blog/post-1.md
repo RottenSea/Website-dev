@@ -3,16 +3,18 @@ draft: false
 
 slug: ""
 title: "My First Blog Post"
-author: "Astro Learner"
-description: "This is the first post of my new Astro blog."
+author: "RottenSea"
+description: ""
 
-date: 2022-07-01
+date: 2026-05-12
 update: 2026-05-11
 
 image:
   url: ""
   alt: ""
-tags: ["astro", "blogging", "learning in public"]
+
+category: "blog"
+tags: ["blog"]
 ---
 
 # My First Blog Post

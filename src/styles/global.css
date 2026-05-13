@@ -1,9 +1,32 @@
-* {
+html {
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
 html {
-  background-color: #f1f5f9;
   font-family: sans-serif;
 }
 
@@ -11,13 +34,6 @@ body {
   margin: 0;
   width: 100%;
   line-height: 1.5;
-}
-
-.container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 100ch;
-  padding: 1rem 2rem;
 }
 
 h1 {
@@ -28,4 +44,11 @@ h1 {
 h2 {
   margin: 1rem 0;
   font-size: 2rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100ch;
+  padding: 1rem 2rem;
 }

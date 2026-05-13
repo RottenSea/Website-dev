@@ -1,0 +1,34 @@
+---
+import Header from "@/components/Header.astro";
+import { getImage } from "astro:assets";
+import bgImage from "@/assets/background/130258907_p0.png";
+
+const pageTitle = "Test";
+
+import "@/styles/header.css";
+
+const optimizedBackground = await getImage({
+  src: bgImage,
+  format: "avif",
+});
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Header />
+    <div
+      id="banner"
+      class="banner"
+      style={`background-image: url(${optimizedBackground.src});`}
+    >
+    </div>
+  </body>
+</html>
