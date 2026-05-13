@@ -1,13 +1,11 @@
 ---
+import HomeIcon from "@/assets/icon/home_fill_light.svg";
+import ArchiveIcon from "@/assets/icon/archive-fill.svg";
 const navLinks = [
-  { href: "/", label: "首页" },
-  { href: "/blog", label: "博客" },
+  { href: "/", label: "首页", icon: HomeIcon },
+  { href: "/blog", label: "博客", icon: ArchiveIcon },
 ];
 ---
-
-<style>
-  @import "@/styles/header.css";
-</style>
 
 <nav class="main-navigation">
   <ul class="nav-list">
@@ -18,6 +16,12 @@ const navLinks = [
             href={link.href}
             class={Astro.url.pathname === link.href ? "active" : ""}
           >
+            <link.icon
+              class="nav-icon"
+              fill="currentColor"
+              width="16"
+              height="16"
+            />
             {link.label}
           </a>
         </li>
