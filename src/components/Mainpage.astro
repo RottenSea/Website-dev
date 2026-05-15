@@ -1,12 +1,10 @@
 ---
+import "@/styles/header.css";
+
 import Navigation from "./Navigation.astro";
 
 import { getImage } from "astro:assets";
-
-import "@/styles/header.css";
-
 import bgImage from "@/assets/background/130258907_p0.png";
-
 const optimizedBackground = await getImage({
   src: bgImage,
   format: "avif",
