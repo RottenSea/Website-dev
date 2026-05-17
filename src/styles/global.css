@@ -1,39 +1,246 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
-  box-sizing: border-box;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
-
-*,
-*::before,
-*::after {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: inherit;
 }
-
-img,
-picture,
-video,
-canvas,
-svg {
+main {
   display: block;
-  max-width: 100%;
 }
-
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+a {
+  background-color: transparent;
+}
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+img {
+  border-style: none;
+}
 button,
 input,
+optgroup,
 select,
 textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+}
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
   font: inherit;
 }
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+template {
+  display: none;
+}
+[hidden] {
+  display: none;
+}
+
+/* =============================================
+   Claude 主题色板
+   ============================================= */
+
+/* ---- 浅色主题（默认） ---- */
+:root {
+  --bg-000: #ffffff;
+  --bg-100: #f9f9f7;
+  --bg-200: #f3f3f0;
+  --bg-300: #f0efec;
+  --bg-400: #e7e6e1;
+  --bg-500: #e7e6e1;
+  --bg-000-rgb: 255, 255, 255;
+
+  --text-000: #131313;
+  --text-100: #131313;
+  --text-200: #383835;
+  --text-300: #383835;
+  --text-400: #7b7974;
+  --text-500: #7b7974;
+
+  --border-100: #d4d4d0;
+
+  --brand-000: #c6613f;
+  --brand-100: #c6613f;
+  --brand-200: #d97757;
+
+  --accent-000: #184f95;
+  --accent-100: #2a78d6;
+  --accent-900: #cde2fb;
+
+  --danger-000: #8e2626;
+  --danger-100: #d03b3b;
+  --danger-900: #fad6d6;
+  --success-000: #006300;
+  --success-100: #009300;
+  --success-900: #caeac7;
+  --warning-000: #734500;
+  --warning-100: #a66a00;
+  --warning-900: #f9dca4;
+}
+
+/* ---- 深色主题 ---- */
+[data-theme="dark"] {
+  --bg-000: #2c2c2a;
+  --bg-100: #20201f;
+  --bg-200: #181817;
+  --bg-300: #131313;
+  --bg-400: #0b0b0b;
+  --bg-500: #0b0b0b;
+  --bg-000-rgb: 44, 44, 42;
+
+  --text-000: #f9f9f7;
+  --text-100: #f9f9f7;
+  --text-200: #c3c2b7;
+  --text-300: #c3c2b7;
+  --text-400: #97958d;
+  --text-500: #97958d;
+
+  --border-100: #3a3a38;
+
+  --brand-000: #c6613f;
+  --brand-100: #c6613f;
+  --brand-200: #d97757;
+
+  --accent-000: #9ec5f4;
+  --accent-100: #3987e5;
+  --accent-900: #062b57;
+
+  --danger-000: #f4abab;
+  --danger-100: #e34948;
+  --danger-900: #511212;
+  --success-000: #91d68b;
+  --success-100: #0ca30c;
+  --success-900: #0f350d;
+  --warning-000: #fab219;
+  --warning-100: #b77700;
+  --warning-900: #412400;
+}
+
+/* =============================================
+   基础样式
+   ============================================= */
 
 html {
-  font-family: sans-serif;
+  font-family: "Microsoft YaHei", sans-serif;
 }
 
 body {
   margin: 0;
   width: 100%;
   line-height: 1.5;
+  background-color: var(--bg-100);
+  color: var(--text-100);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
@@ -51,4 +258,462 @@ h2 {
   width: 100%;
   max-width: 100ch;
   padding: 1rem 2rem;
+}
+
+a {
+  color: var(--accent-100);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-000);
+}
+
+/* =============================================
+   导航栏 (Navbar)
+   ============================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  font-size: 0.875rem;
+  box-shadow:
+    0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 2rem;
+}
+
+.navbar-brand {
+  flex-shrink: 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.navbar-collapse {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* ---- 导航栏滚动效果 ---- */
+
+.scrolling-navbar {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  will-change: padding, background;
+  transition:
+    padding 0.35s ease-in-out,
+    background 0.35s ease-in-out;
+}
+
+.scrolling-navbar.top-nav-collapse {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+@supports (-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px)) {
+  .scrolling-navbar.top-nav-collapse {
+    background: rgba(var(--bg-000-rgb), 0.85);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+}
+
+@supports not ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))) {
+  .scrolling-navbar.top-nav-collapse {
+    background: var(--bg-300);
+  }
+}
+
+/* 滚动后导航文字颜色切换 */
+.scrolling-navbar.top-nav-collapse .navbar-brand,
+.scrolling-navbar.top-nav-collapse .nav-item a,
+.scrolling-navbar.top-nav-collapse .theme-toggle,
+.scrolling-navbar.top-nav-collapse .menu-toggle {
+  color: var(--text-100);
+}
+
+/* ---- 导航链接列表 ---- */
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.3rem;
+  border-radius: 4px;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+.nav-icon {
+  display: inline-flex;
+}
+
+.nav-item a:hover {
+  color: var(--accent-100);
+}
+
+.nav-item a.active {
+  color: var(--accent-100);
+}
+
+/* ---- 主题切换按钮（导航栏内） ---- */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.3rem;
+  border-radius: 4px;
+  line-height: 0;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--accent-100);
+  transform: scale(1.1);
+}
+
+.theme-toggle .theme-icon {
+  display: inline-flex;
+}
+
+.theme-toggle .dark-icon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .light-icon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .dark-icon {
+  display: inline-flex;
+}
+
+/* =============================================
+   响应式：汉堡菜单按钮
+   ============================================= */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.3rem;
+  line-height: 0;
+  border-radius: 4px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.menu-toggle:hover {
+  color: var(--accent-100);
+  transform: scale(1.1);
+}
+
+.nav-collapsed .menu-toggle {
+  display: inline-flex;
+}
+
+.nav-collapsed .main-navigation {
+  display: none;
+}
+
+/* =============================================
+   侧边栏 (Sidebar)
+   ============================================= */
+
+.nav-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-sidebar-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 1000;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: max-content;
+  width: auto;
+  max-width: 80vw;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-sidebar.open {
+  transform: translateX(0);
+}
+
+@supports (-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px)) {
+  .nav-sidebar {
+    background: rgba(var(--bg-000-rgb), 0.92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+
+@supports not ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+  .nav-sidebar {
+    background: var(--bg-200);
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-100);
+  padding: 0.3rem;
+  line-height: 0;
+  border-radius: 4px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.sidebar-close:hover {
+  color: var(--accent-100);
+  transform: scale(1.1);
+}
+
+.sidebar-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav-list a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-100);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-nav-list a:hover {
+  background: var(--bg-200);
+  color: var(--accent-100);
+}
+
+.sidebar-nav-list a.active {
+  background: var(--bg-200);
+  color: var(--accent-100);
+}
+
+.sidebar-nav-list .nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-sidebar .theme-toggle {
+  color: var(--text-100);
+  align-self: flex-start;
+  padding: 0.75rem 1rem;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.nav-sidebar .theme-toggle:hover {
+  color: var(--accent-100);
+}
+
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* =============================================
+   Banner / 英雄区域
+   ============================================= */
+
+.banner {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner-mask {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner-text {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* =============================================
+   博客卡片 (Blog Card)
+   ============================================= */
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.blog-card {
+  border: 1px solid var(--border-100);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: var(--bg-000);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.blog-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.blog-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: var(--text-100);
+}
+
+.blog-card time {
+  display: block;
+  color: var(--text-400);
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card .description {
+  margin: 0;
+  color: var(--text-300);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.blog-card .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.blog-card .card-tag {
+  background: var(--bg-200);
+  color: var(--text-400);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* =============================================
+   底部 (Footer)
+   ============================================= */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-100);
+}
+
+footer p {
+  margin: 0;
+  color: var(--text-400);
+  font-size: 0.9rem;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--accent-100);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: var(--accent-000);
+  text-decoration: underline;
+}
+
+.footer-icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
 }

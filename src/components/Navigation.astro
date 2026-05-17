@@ -1,6 +1,11 @@
 ---
 import HomeIcon from "@/assets/icon/home_fill_light.svg";
 import ArchiveIcon from "@/assets/icon/archive-fill.svg";
+import LightModeIcon from "@/assets/icon/light_mode.svg";
+import DarkModeIcon from "@/assets/icon/dark_mode.svg";
+import MenuIcon from "@/assets/icon/round_menu_fill.svg";
+import CloseIcon from "@/assets/icon/close.svg";
+
 const navLinks = [
   { href: "/", label: "首页", icon: HomeIcon },
   { href: "/blog", label: "博客", icon: ArchiveIcon },
@@ -28,4 +33,45 @@ const navLinks = [
       ))
     }
   </ul>
+  <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">
+    <LightModeIcon class="theme-icon light-icon" fill="currentColor" width="20" height="20" />
+    <DarkModeIcon class="theme-icon dark-icon" fill="currentColor" width="20" height="20" />
+  </button>
 </nav>
+
+<button id="menu-toggle" class="menu-toggle" aria-label="菜单">
+  <MenuIcon width="24" height="24" fill="currentColor" />
+</button>
+
+<div id="nav-sidebar-overlay" class="nav-sidebar-overlay"></div>
+<aside id="nav-sidebar" class="nav-sidebar">
+  <div class="sidebar-header">
+    <button id="sidebar-close" class="sidebar-close" aria-label="关闭菜单">
+      <CloseIcon width="24" height="24" fill="currentColor" />
+    </button>
+  </div>
+  <ul class="sidebar-nav-list">
+    {
+      navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class={Astro.url.pathname === link.href ? "active" : ""}
+          >
+            <link.icon
+              class="nav-icon"
+              fill="currentColor"
+              width="20"
+              height="20"
+            />
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <button id="sidebar-theme-toggle" class="theme-toggle" aria-label="切换主题">
+    <LightModeIcon class="theme-icon light-icon" fill="currentColor" width="20" height="20" />
+    <DarkModeIcon class="theme-icon dark-icon" fill="currentColor" width="20" height="20" />
+  </button>
+</aside>

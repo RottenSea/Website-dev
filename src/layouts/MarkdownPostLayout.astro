@@ -1,5 +1,63 @@
 ---
+export interface Props {
+  pageTitle: string;
+  date: Date;
+  author?: string;
+  tags?: string[];
+}
 
+const { pageTitle, date, author, tags } = Astro.props;
 ---
 
-<slot />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <article class="post-content">
+      <h1>{pageTitle}</h1>
+      <div class="post-meta">
+        <time>{date.toDateString()}</time>
+        {author && <span class="author">{author}</span>}
+      </div>
+      {tags && tags.length > 0 && (
+        <div class="tags">
+          {tags.map(tag => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+      <slot />
+    </article>
+
+    <style>
+      .post-content {
+        max-width: 80ch;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      .post-meta {
+        display: flex;
+        gap: 1rem;
+        color: var(--text-400);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+
+      .tags {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .tag {
+        background: var(--bg-200);
+        color: var(--text-300);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+      }
+    </style>
+  </body>
+</html>

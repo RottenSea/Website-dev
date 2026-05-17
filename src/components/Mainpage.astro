@@ -1,6 +1,4 @@
 ---
-import "@/styles/header.css";
-
 import Navigation from "./Navigation.astro";
 
 import { getImage } from "astro:assets";
@@ -42,6 +40,7 @@ const optimizedBackground = await getImage({
 </div>
 
 <script>
+  // Scroll effect
   const navbar = document.getElementById("navbar");
   if (navbar) {
     const toggleNavbar = () => {
@@ -50,4 +49,68 @@ const optimizedBackground = await getImage({
     window.addEventListener("scroll", toggleNavbar, { passive: true });
     toggleNavbar();
   }
+
+  // Theme toggle (main + sidebar)
+  const applyTheme = function (next) {
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  };
+
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+  }
+
+  const sidebarThemeToggle = document.getElementById("sidebar-theme-toggle");
+  if (sidebarThemeToggle) {
+    sidebarThemeToggle.addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      applyTheme(current === "dark" ? "light" : "dark");
+    });
+  }
+
+  // Responsive: detect nav overflow
+  var navContainer = document.querySelector(".nav-container");
+  var collapse = document.querySelector(".navbar-collapse");
+  var navEl = document.querySelector(".navbar");
+
+  function checkOverflow() {
+    if (!navContainer || !collapse) return;
+    var containerRect = navContainer.getBoundingClientRect();
+    var collapseRect = collapse.getBoundingClientRect();
+    var needs = collapseRect.right > containerRect.right - 8;
+    navEl.classList.toggle("nav-collapsed", needs);
+  }
+
+  window.addEventListener("resize", checkOverflow);
+  checkOverflow();
+
+  // Sidebar
+  var menuToggle = document.getElementById("menu-toggle");
+  var sidebar = document.getElementById("nav-sidebar");
+  var overlay = document.getElementById("nav-sidebar-overlay");
+  var sidebarClose = document.getElementById("sidebar-close");
+
+  function openSidebar() {
+    if (sidebar && overlay) {
+      sidebar.classList.add("open");
+      overlay.classList.add("open");
+      document.body.classList.add("sidebar-open");
+    }
+  }
+
+  function closeSidebar() {
+    if (sidebar && overlay) {
+      sidebar.classList.remove("open");
+      overlay.classList.remove("open");
+      document.body.classList.remove("sidebar-open");
+    }
+  }
+
+  if (menuToggle) menuToggle.addEventListener("click", openSidebar);
+  if (sidebarClose) sidebarClose.addEventListener("click", closeSidebar);
+  if (overlay) overlay.addEventListener("click", closeSidebar);
 </script>

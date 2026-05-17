@@ -1,30 +1,9 @@
 ---
-import "@/styles/global.css";
-import "@/styles/header.css";
-
-import bgImage from "@/assets/background/130258907_p0.png";
+import Layout from "@/layouts/Layout.astro";
+const pageTitle = "Test Page";
 ---
 
-<head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-  <title>Document</title>
-</head>
-<div
-  id="banner"
-  class="banner"
-  style={`background-image: url(${bgImage.src});`}
->
-  <nav class="navbar">
-    <div class="brand">我的网站</div>
-    <ul class="nav-list">
-      <li><a href="#">首页</a></li>
-      <li><a href="#">关于</a></li>
-      <li><a href="#">服务</a></li>
-      <li><a href="#">联系</a></li>
-    </ul>
-  </nav>
-</div>
+<Layout pageTitle={pageTitle}>
+  <h1>Test Page</h1>
+  <p>这是一个测试页面。</p>
+</Layout>

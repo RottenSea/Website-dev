@@ -7,5 +7,10 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [partytown(), react()]
+  integrations: [partytown(), react()],
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/noop",
+    },
+  },
 });

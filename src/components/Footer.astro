@@ -1,16 +1,17 @@
 ---
-const platform = "github";
-const username = "RottenSea";
+import GithubIcon from "@/assets/icon/github.svg";
 ---
-
-<style>
-  @import "../styles/footer.css";
-</style>
 
 <footer>
   <p>
-    Learn more about my projects on <a
-      href={`https://www.${platform}.com/${username}`}>{platform}</a
-    >!
+    <a
+      href="https://github.com/RottenSea"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <GithubIcon class="footer-icon" width="16" height="16" fill="currentColor" />
+      GitHub
+    </a>
   </p>
+  <p>&copy; {new Date().getFullYear()} RottenSea</p>
 </footer>
