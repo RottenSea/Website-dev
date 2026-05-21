@@ -16,10 +16,12 @@ const blog = defineCollection({
     date: z.date(),
     update: z.date().nullable().optional(),
 
-    image: z.object({
-      url: z.string().nullable(),
-      alt: z.string().nullable(),
-    }),
+    image: z
+      .object({
+        url: z.string().nullable(),
+        alt: z.string().nullable(),
+      })
+      .optional(),
 
     category: z.string().nullable().default("blog"),
     tags: z.array(z.string()).default(["blog"]),
