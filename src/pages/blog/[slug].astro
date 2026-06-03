@@ -46,9 +46,33 @@ const pageTitle = post.data.title;
   .post-body {
     line-height: 1.8;
     color: var(--text-100);
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .post-body :global(h2) {
     margin-top: 2.5rem;
+  }
+
+  .post-body :global(pre) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  .post-body :global(code) {
+    word-break: break-all;
+  }
+
+  .post-body :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .post-body :global(table) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
   }
 </style>
